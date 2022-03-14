@@ -40,7 +40,7 @@ _The demonstration script should provide all the information required for anothe
 * _any tear down steps required to reset the demonstration so it is ready for the next time_
 
 
-
+==================================Template ends here ======================================
 
 
 Object detection algortihms are being used for many real-world use cases. Real-time detection allows all kinds of challenges for collecting and acting on opportunities and threats.
