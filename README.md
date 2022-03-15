@@ -3,8 +3,8 @@ SA Hackathon - Team 10 repo
 
 # Details
 
-**Project** : _insert project title here_  
-**Team Number** : _insert team number here_  
+**Project** : Realtime Alert Command Control System
+**Team Number** : 10  
 **Team Name** : _insert team name here_  
 **Demonstration Video** : _Insert link to demonstration video_  
 
