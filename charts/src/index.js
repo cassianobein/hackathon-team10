@@ -34,11 +34,30 @@ const heatmapChart = sdk.createChart({
 })
 
 
-const clickHandler = (payload) => {
-  shiptypeChart.setHighlight(payload.selectionFilter)
-  gaugeChart.setHighlight(payload.selectionFilter)
-  locationChart.setFilter(payload.selectionFilter)
-  heatmapChart.setFilter(payload.selectionFilter)
+const clickHandlerGauge = (payload) => {
+  gaugeChart.setHighlight({});
+  shiptypeChart.setFilter({"mil_flag": true});
+  locationChart.setFilter({"mil_flag": true});
+  heatmapChart.setFilter(
+    {
+      'ground_truth.detections.label':{
+        $in:['potted plant', 'tv']
+      }
+    }
+  );
+
+};
+
+const clickHandlerShips = (payload) => {
+  shiptypeChart.setHighlight(payload.selectionFilter);
+  locationChart.setFilter(payload.selectionFilter);
+  heatmapChart.setFilter(
+    {
+      'ground_truth.detections.label':{
+        $in:['potted plant']
+      }
+    }
+  );
   
 };
 
@@ -94,8 +113,8 @@ function addEventListeners() {
       await dashboard.setChartsBackground(chartsBackground);
     });
 
-    shiptypeChart.addEventListener("click", clickHandler);
-    gaugeChart.addEventListener("click", clickHandler);
+    shiptypeChart.addEventListener("click", clickHandlerShips);
+    gaugeChart.addEventListener("click", clickHandlerGauge);
 }
 
 async function renderDashboard() {
