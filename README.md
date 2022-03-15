@@ -45,7 +45,7 @@ _The demonstration script should provide all the information required for anothe
 
 Object detection algortihms are being used for many real-world use cases. Real-time detection allows all kinds of challenges for collecting and acting on opportunities and threats.
 
-VOXEL51 has leveraged the power of the MongoDB database to help developers and data scientists build and optimize object detection and classification algorithms
+VOXEL51 has leveraged the power of the MongoDB database to help develpoers and data scientists build and optimize object detection and classification algorithms
 
 
 Resources:
@@ -55,6 +55,21 @@ https://cloud.mongodb.com/v2/622fa89e695aa705f173de8f#clusters
 
 INSTALLATION:
 
+ If you have a Apple computer and doesn't have Apple Command Line Tools installed, run this command:
+```
+xcode-select --install
+```
+Install Python virtualenv:
+```
+brew install virtualenv
+```
+
+````
+virtualenv venv
+source venv/bin/activate
+````
+
+Install Fiftyone by running these commmads: 
 ```
 pip install --upgrade pip setuptools wheel
 pip install fiftyone
