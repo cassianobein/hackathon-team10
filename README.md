@@ -55,6 +55,21 @@ https://cloud.mongodb.com/v2/622fa89e695aa705f173de8f#clusters
 
 INSTALLATION:
 
+ If you have a Apple computer and doesn't have Apple Command Line Tools installed, run this command:
+```
+xcode-select --install
+```
+Install Python virtualenv:
+```
+brew install virtualenv
+```
+
+````
+virtualenv venv
+source venv/bin/activate
+````
+
+Install Fiftyone by running these commmads: 
 ```
 pip install --upgrade pip setuptools wheel
 pip install fiftyone
