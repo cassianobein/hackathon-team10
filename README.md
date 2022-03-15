@@ -3,14 +3,31 @@ SA Hackathon - Team 10 repo
 
 # Details
 
-**Project** : Realtime Alert Command Control System
+**Project** : "Realtime Alert Command Control System"
 **Team Number** : 10  
-**Team Name** : _insert team name here_  
+**Team Name** : Space Force 
 **Demonstration Video** : _Insert link to demonstration video_  
 
 # Overview
 
-_Insert Executive Overview of your application/demonstration_
+NATO Alliance Countries are building an Alarm System for monitoring Ukraine coastline  and flagging the status of the Black Sea Coast line by sending alert flags (Red, Blue, Green )to the Ukrainian forces.
+
+The Idea for building a Dashboard is simple . NATO alliance countries are aggregating all the images of the coast of Black Sea collected via satellites and surveillance aircrafts. These Images will be processed through an image processing tool called Fifty One . This tool will generate metadata based on the images, detecting the vessels and predicting the kind/category of vessel . For example these vessels could be Commercial Cargos, Commercial Oil Tankers or Warships, Frigates Destroyers  or aircraft carriers. 
+
+All these images are collected constantly and metadata data that is generated via  Fifty One  is merged /loaded to the Mongo Atlas Database. 
+
+As the Data gets loaded  to a mongo Collections it is constantly indexed using Atlas Search to make this data searchable. The Search supports fuzzy logic , synonyms as different Assets (as in Ships ) may have different names in different countries 
+
+Atlas charts will use this real time data to update the dashboard for constant monitoring . A pie chart can report the percentage of non-military vessels vs commercial vessels vs humanitarian vessels like red cross  or peace corps.
+
+Chart will also have a Heat Map of Ukraine’s Black Sea coast line highlighting military activity.
+
+For building this dashboard for the Command Control Center  Nato Alliance Countries have selected a set of tools.
+ Fifty One  for AI  processing and metadata generation 
+MongoDB Atlas 
+Atlas Search
+Atlas Charts.
+
 
 # Justification
 
