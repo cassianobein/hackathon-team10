@@ -43,7 +43,11 @@ _Describe what you application does and how it works_
 
 # Roles and Responsibilities
 
-_List all the team members and summarize the contributions each member made to this project_
+Charlie Little : Data Model , Dataset Generation
+Dhananjay Ghevde : Demo Story Line , Git Hub 
+Cassiano Bien : Search 
+Alec : Charts , Dashboard
+Sharath :  Video 
 
 # Demonstration Script
 
@@ -52,27 +56,9 @@ _Demonstration script (or link to script) goes here_
 _The demonstration script should provide all the information required for another MongoDB SA to deliver your demonstration to a prospect. This should include:_
 
 * _setup/installation steps_
-* _step by step instructions on how to give the demonstration_
-* _key points to emphasize at each point in the demonstration_
-* _any tear down steps required to reset the demonstration so it is ready for the next time_
+Fifty One  Setup Instlations:
 
-
-==================================Template ends here ======================================
-
-
-Object detection algortihms are being used for many real-world use cases. Real-time detection allows all kinds of challenges for collecting and acting on opportunities and threats.
-
-VOXEL51 has leveraged the power of the MongoDB database to help develpoers and data scientists build and optimize object detection and classification algorithms
-
-
-Resources:
-https://voxel51.com/docs/fiftyone/index.html
-
-https://cloud.mongodb.com/v2/622fa89e695aa705f173de8f#clusters
-
-INSTALLATION:
-
- If you have a Apple computer and doesn't have Apple Command Line Tools installed, run this command:
+If you have a Apple computer and doesn't have Apple Command Line Tools installed, run this command:
 ```
 xcode-select --install
 ```
@@ -91,3 +77,22 @@ Install Fiftyone by running these commmads:
 pip install --upgrade pip setuptools wheel
 pip install fiftyone
 ```
+* _step by step instructions on how to give the demonstration_
+* _key points to emphasize at each point in the demonstration_
+* _any tear down steps required to reset the demonstration so it is ready for the next time_
+
+
+==================================Template ends here ======================================
+
+
+Object detection algortihms are being used for many real-world use cases. Real-time detection allows all kinds of challenges for collecting and acting on opportunities and threats.
+
+VOXEL51 has leveraged the power of the MongoDB database to help develpoers and data scientists build and optimize object detection and classification algorithms
+
+
+Resources:
+https://voxel51.com/docs/fiftyone/index.html
+
+https://cloud.mongodb.com/v2/622fa89e695aa705f173de8f#clusters
+
+
