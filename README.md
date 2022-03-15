@@ -52,3 +52,10 @@ Resources:
 https://voxel51.com/docs/fiftyone/index.html
 
 https://cloud.mongodb.com/v2/622fa89e695aa705f173de8f#clusters
+
+INSTALLATION:
+
+```
+pip install --upgrade pip setuptools wheel
+pip install fiftyone
+```
