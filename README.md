@@ -36,8 +36,6 @@ VOXEL51 has leveraged the power of the MongoDB database to help develpoers and d
 
 _Please explain why you decided to build the application/demonstration for this project. What inspired you? What problems does it solve or how will it make Presales activities easier?_
 
-
-
 MongoDB Competitive differentiators
 - Developer Velocity
 - Native GeoJSON capablity
@@ -48,17 +46,19 @@ MongoDB Competitive differentiators
 
 # Detailed Application Overview
 
-Architecture:
+### Architecture:
 
 ![This is an Architecture Diagram ](../images/Architecture.png)
-MongoDB components/products used:
+
+### MongoDB Components/products used:
 
 - MongoDB Atlas
 - MongoDB Atlas Search 
 - MongoDB Atlas Charts
 - MongoDB Atlas Triggers
 
-Workings:
+
+### Workings:
 1. Satellite Images collection
 2. Real Time processing of images  via VOXEL51 to metadata. 
 3. Ingest data using 
