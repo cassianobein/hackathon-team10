@@ -48,7 +48,7 @@ MongoDB Competitive differentiators
 
 ### Architecture:
 
-![This is an Architecture Diagram ](../images/Architecture.png)
+![This is an Architecture Diagram ](../Images/Architecture.png)
 
 ### MongoDB Components/products used:
 
