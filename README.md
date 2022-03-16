@@ -3,7 +3,7 @@ SA Hackathon - Team 10
 
 # Details
 
-**Project** : "Realtime Alert Command Control System"
+**Project** : "RAMBO (Realtime Analysis for Maritime Battle Operations)"
 **Team Number** : 10  
 **Team Name** : 'Space Force'
 **Demonstration Video** : _Insert link to demonstration video_  
