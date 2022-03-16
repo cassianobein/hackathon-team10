@@ -34,7 +34,7 @@ VOXEL51 has leveraged the power of the MongoDB database to help develpoers and d
 
 # Justification #
 
-_Please explain why you decided to build the application/demonstration for this project. What inspired you? What problems does it solve or how will it make Presales activities easier?_
+Realtime analytics are is the big challenge of our times 
 
 MongoDB Competitive differentiators
 - Developer Velocity
@@ -72,11 +72,11 @@ MongoDB Competitive differentiators
 
 # Roles and Responsibilities #
 
-Charlie Little : Data Model , Dataset Generation
-Dhananjay Ghevde : Demo Story Line, Aggregation Pipeline, Git Hub 
-Cassiano Bien : Search 
-Alec : Charts , Dashboard
-Sharath :  Video 
+- Charlie Little : Data Model , Dataset Generation
+- Dhananjay Ghevde : Demo Story Line, Aggregation Pipeline, Git Hub 
+- Cassiano Bien : Search 
+- Alec : Charts , Dashboard
+- Sharath :  Triggers, Video 
 
 # Demonstration Script #
 
@@ -108,7 +108,9 @@ need  writeup to run the fiftyone tool
 
 ### Data Enrichment  ###
 
+
 ````
+cd 
 python3 metadata data_update.py 
 ````
 ### Search Setup ###
@@ -121,6 +123,8 @@ Setup the Data sources pipeline
 ![This is an datapipe setup 2 ](./Images/setdatapipe2.png)
 
 #### Import the Dashboard template ####
+
+To locate the Template file navigate to hackathon-team10/charts/template
 
 
 ![This is an ImportTemplate1 ](./Images/importtemplate1.png)
@@ -158,7 +162,7 @@ const heatmapChart = sdk.createChart({
 #### Run Charts ####
 
 ````
-cd charts 
+cd charts
 npm install 
 npm start 
 ````
