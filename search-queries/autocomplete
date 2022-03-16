@@ -1,0 +1,7 @@
+[{$search: {
+ index: 'autocomplete',
+ autocomplete: {
+  query: 'shi',
+  path: 'ground_truth.detections.label'
+ }
+}}]
