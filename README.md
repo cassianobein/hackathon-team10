@@ -75,7 +75,7 @@ MongoDB Competitive differentiators
 - Charlie Little : Data Model , Dataset Generation
 - Dhananjay Ghevde : Demo Story Line, Aggregation Pipeline, Git Hub 
 - Cassiano Bien : Search 
-- Alec : Charts , Dashboard
+- Alek : Charts , Dashboard
 - Sharath :  Triggers, Video 
 
 # Demonstration Script #
@@ -218,7 +218,7 @@ To locate the Template file navigate to : hackathon-team10/charts/template
 ![This is an ImportTemplate3 ](./Images/importtemplate3.png)
 
 #### Configure Charts ####
-Edit following files to replace the baseUrl  
+Make the following changes in /charts/src/index.js  
 
 ````
 const sdk = new ChartsEmbedSDK({
@@ -226,14 +226,14 @@ const sdk = new ChartsEmbedSDK({
 });
 ````
 
-Edit following files to replace the chartId  for the following charts
+Edit following lines to replace the chartId for each of the 3 charts
 
 ````
 const shiptypeChart = sdk.createChart({
   chartId: "6230e742-1a35-4481-8e2c-45c3c28ca2ca", //REPLACE with your chartId
 });
 ````
-chartId
+
 ````
 const gaugeChart = sdk.createChart({
   chartId: "6230fce0-5885-423c-8d42-918f35a59673", //REPLACE with your chartId
