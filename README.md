@@ -3,10 +3,10 @@ SA Hackathon - Team 10
 
 # Details
 
--- Project : "RAMBO (Realtime Analysis for Maritime Battle Operations)"
--- Team Number : 10  
--- Team Name : Space Force 10
--- Demonstration Video : 
+- Project : "RAMBO (Realtime Analysis for Maritime Battle Operations)"
+- Team Number : 10  
+- Team Name : Space Force 10
+- Demonstration Video : 
 
 # Overview #
 
