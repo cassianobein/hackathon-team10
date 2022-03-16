@@ -1,0 +1,83 @@
+// MongoDB Playground
+// To disable this template go to Settings | MongoDB | Use Default Template For Playground.
+// Make sure you are connected to enable completions and to be able to run a playground.
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+// Select the database to use.
+use('fiftyone');
+
+// Run a find command to view items 
+var range = db.ships_updated.find(  
+    {}, { "area" : "$ground_truth.detections.Ship_area", _id:0 }
+).toArray().sort( (a,b) => ( a.area > b.area ) ? 1 : -1 ).map( x => x.area );
+print( range.length );
+range = [...new Set(range)];
+print( range.length );
+range = range.filter( ( x, i ) => i % 1000 == 0 );
+print( range );
+
+
+db.ships_updated.aggregate( [ { /**
+ * _id: The id of the group.
+ * fieldN: The first field name.
+ */
+    /**
+     * index: The name of the Search index.
+     * count: The count of the results.
+     * facet: {
+     *   operator: Analyzed search, with required fields of query and path, can either be replaced with the name of a valid operator.
+     *   facets: {
+     *     stringFacet: Narrows search results based on unique string values, with required fields of type and path.
+     *     numberFacet: Narrows search results by breaking them up into separate ranges of numbers, with required fields of type, path, and boundaries.
+     *     dateFacet: Narrows search results by breaking them up into separate ranges of dates, with required fields of type, path, and boundaries.
+     *   }
+     * }
+     */
+    $searchMeta: {
+      index: "facets",
+      facet: {
+        "operator": {
+          "exists": {
+            "path": "ground_truth.detections.Ship_size"
+          }
+        },
+        facets: {
+          "sizeFacet": {
+            "type": "string",
+            "path": "ground_truth.detections.Ship_size"
+          },
+          "locFacet": {
+              "type": "string",
+              "path": "ground_truth.detections.Ship_location"
+          },
+          "areaFacet": {
+              "type": "number",
+              "path": "ground_truth.detections.Ship_area",
+              "boundaries": range
+          }
+        }
+      }
+    } } ]
+);
+
+// Build an aggregation to view total sales for each product in 2014.
+// const aggregation = [
+//   { $match: { date: { $gte: new Date('2014-01-01'), $lt: new Date('2015-01-01') } } },
+//   { $group: { _id: '$item', totalSaleAmount: { $sum: { $multiply: [ '$price', '$quantity' ] } } } }
+// ];
+var paths_to_update = db.ships_updated.find().toArray();
+print( paths_to_update );
+
+paths_to_update.forEach( doc => {
+    var source_file = doc.ground_truth.detections.source_file;
+    var name = source_file.split( "/" )[10];
+    var path = `https://triggers-realmapp-wxoor-yhfls.mongodbstitch.com/images/${name}`;
+    print(path);
+    print( JSON.stringify( db.ships_updated.updateOne( { _id : doc._id }, { $set : { "img" : path } } ) ) );
+});
+
+
+// // Run the aggregation and open a cursor to the results.
+// // Use toArray() to exhaust the cursor to return the whole result set.
+// // You can use hasNext()/next() to iterate through the cursor page by page.
+// db.sales.aggregate(aggregation);
