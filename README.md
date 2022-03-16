@@ -124,7 +124,7 @@ Setup the Data sources pipeline
 
 #### Import the Dashboard template ####
 
-To locate the Template file navigate to hackathon-team10/charts/template
+To locate the Template file navigate to : hackathon-team10/charts/template
 
 
 ![This is an ImportTemplate1 ](./Images/importtemplate1.png)
