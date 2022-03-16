@@ -8,7 +8,7 @@ SA Hackathon - Team 10
 **Team Name** : 'Space Force'
 **Demonstration Video** : _Insert link to demonstration video_  
 
-# Overview
+# Overview #
 
 NATO Alliance Countries are building an Alarm System for monitoring Ukraine coastline  and flagging the status of the Black Sea Coast line by sending alert flags (Red, Blue, Green )to the Ukrainian forces.
 
@@ -32,7 +32,7 @@ For building this dashboard for the Command Control Center  Nato Alliance Countr
 VOXEL51 has leveraged the power of the MongoDB database to help develpoers and data scientists build and optimize object detection and classification algorithms
 
 
-# Justification
+# Justification #
 
 _Please explain why you decided to build the application/demonstration for this project. What inspired you? What problems does it solve or how will it make Presales activities easier?_
 
@@ -44,13 +44,13 @@ MongoDB Competitive differentiators
 
 
 
-# Detailed Application Overview
+# Detailed Application Overview #
 
-### Architecture:
+### Architecture: ###
 
 ![This is an Architecture Diagram ](./Images/Architecture.png)
 
-### MongoDB Components/products used:
+### MongoDB Components/products used: ###
 
 - MongoDB Atlas
 - MongoDB Atlas Search 
@@ -58,7 +58,7 @@ MongoDB Competitive differentiators
 - MongoDB Atlas Triggers
 
 
-### Workings:
+### Workings: ###
 1. Satellite Images collection
 2. Real Time processing of images  via VOXEL51 to metadata. 
 3. Ingest data using 
@@ -70,7 +70,7 @@ MongoDB Competitive differentiators
 
 
 
-# Roles and Responsibilities
+# Roles and Responsibilities #
 
 Charlie Little : Data Model , Dataset Generation
 Dhananjay Ghevde : Demo Story Line, Aggregation Pipeline, Git Hub 
@@ -78,11 +78,11 @@ Cassiano Bien : Search
 Alec : Charts , Dashboard
 Sharath :  Video 
 
-# Demonstration Script
+# Demonstration Script #
 
-## Setup
+## Setup ##
 
-### Fifty One Installation and Run:
+### Fifty One Installation and Run: ###
 
 If you have a Apple computer and doesn't have Apple Command Line Tools installed, run this command:
 ```
@@ -106,28 +106,28 @@ pip install fiftyone
 #### 
 need  writeup to run the fiftyone tool
 
-### Data Enrichment 
+### Data Enrichment  ###
 
 ````
 python3 metadata data_update.py 
 ````
-### Search Setup 
+### Search Setup ###
 
-### Charts Setup 
-#### Activate Charts 
+### Charts Setup ####
+#### Activate Charts ###
 
 Setup the Data sources pipeline
 ![This is an datapipe setup 1 ](./Images/setdatapipe1.png)
 ![This is an datapipe setup 2 ](./Images/setdatapipe2.png)
 
-#### Import the Dashboard template 
+#### Import the Dashboard template ####
 
 
 ![This is an ImportTemplate1 ](./Images/importtemplate1.png)
 ![This is an ImportTemplate2 ](./Images/importtemplate2.png)
 ![This is an ImportTemplate3 ](./Images/importtemplate3.png)
 
-#### Configure Charts
+#### Configure Charts ####
 Edit following files to replace the baseUrl  
 
 ````
@@ -155,7 +155,7 @@ const heatmapChart = sdk.createChart({
 })
 ````
 
-#### Run Charts
+#### Run Charts ####
 
 ````
 cd charts 
@@ -164,25 +164,20 @@ npm start
 ````
 
 
-### Tear Down 
+# About VOXEL51 #
 
 
-
-=================================
-
-
-Object detection algortihms are being used for many real-world use cases. Real-time detection allows all kinds of challenges for collecting and acting on opportunities and threats.
+Object detection algorithams are being used for many real-world use cases. Real-time detection allows all kinds of challenges for collecting and acting on opportunities and threats.
 
 
+## Resources: ##
 
+- https://voxel51.com/docs/fiftyone/index.html
 
-Resources:
-https://voxel51.com/docs/fiftyone/index.html
+- https://cloud.mongodb.com/v2/622fa89e695aa705f173de8f#clusters
 
-https://cloud.mongodb.com/v2/622fa89e695aa705f173de8f#clusters
+## Data set sources: ##
 
-Data sources: 
-
-https://github.com/zzndream/ShipRSImageNet
+- https://github.com/zzndream/ShipRSImageNet
 
 
