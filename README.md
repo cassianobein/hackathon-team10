@@ -115,6 +115,92 @@ python3 metadata data_update.py
 ````
 ### Search Setup ###
 
+#### Setup Indexes ####
+
+- Setup default indexes 
+````
+{
+  "mappings": {
+    "dynamic": true
+  }
+}
+````
+
+- Setup Autocomplete Index for searching 
+
+````
+{
+  "mappings": {
+    "dynamic": true,
+    "fields": {
+      "ground_truth": {
+        "fields": {
+          "detections": {
+            "fields": {
+              "label": [
+                {
+                  "dynamic": true,
+                  "type": "document"
+                },
+                {
+                  "type": "autocomplete"
+                }
+              ]
+            },
+            "type": "document"
+          }
+        },
+        "type": "document"
+      }
+    }
+  }
+}
+
+````
+- Setup facets Index for searching 
+````
+{
+  "mappings": {
+    "dynamic": true,
+    "fields": {
+      "ground_truth": {
+        "fields": {
+          "detections": {
+            "fields": {
+              "Ship_area": {
+                "type": "numberFacet"
+              },
+              "Ship_location": {
+                "type": "stringFacet"
+              },
+              "Ship_size": [
+                {
+                  "dynamic": true,
+                  "type": "document"
+                },
+                {
+                  "type": "stringFacet"
+                }
+              ],
+              "label": {
+                "type": "stringFacet"
+              }
+            },
+            "type": "document"
+          }
+        },
+        "type": "document"
+      }
+    }
+  }
+}
+````
+
+
+#### Run Search UI ####
+
+
+
 ### Charts Setup ####
 #### Activate Charts ###
 
