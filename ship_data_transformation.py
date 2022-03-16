@@ -28,4 +28,20 @@ result = collection.aggregate([
 print(result)
 
 print("--- UPDATING MIL FLAG ---")
-db.ships_updated.updateMany({'ground_truth.detections.label': {'$in': [ 'Other Warship','Other Destoryer','Other Frigate','Nimitz', 'Submarine']}},{"$set":{"mil_flag":True}})
+collection = db.ships_updated_andrew
+collection.update_many(
+    {
+        'ground_truth.detections.label': {
+            '$in': [
+                'Other Warship',
+                'Other Destoryer',
+                'Other Frigate',
+                'Nimitz',
+                'Submarine'
+            ]
+        }
+    }, {
+        "$set": {
+            "mil_flag": True
+        }
+    })
