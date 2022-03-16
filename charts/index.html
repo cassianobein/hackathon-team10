@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html  class="h-full font-sans">
+  <head>
+    <title>Team10 Embedded Chart</title>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+  
+      .title {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 42px;
+        font-weight: bold;
+        padding-left: 30px;
+        padding-top: 30px;
+      }
+
+      .chart {
+        flex: 1;
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+      }
+      
+      </style>
+  </head>
+
+  <body class="h-full font-sans">
+    <h1 class="title">Team 10</h1>
+    <main class="h-full">
+      
+
+      <!-- Navigation Bar-->
+      <div class="h-16 flex flex-column m-4 items-center justify-around" id="nav">
+        <!-- Refresh button -->
+        <a href="" class="border text-slate-50 bg-green-600 p-2 rounded">FiftyOne</a><br>
+        <button class="border text-slate-50 bg-green-600 p-2 rounded"  id="refresh-button">Refresh</button>
+        <!-- Theme checkbox-->
+        <label>
+          <input type="checkbox" id="theme" /> 
+          Theme (<span id="currentTheme">dark</span>)
+        </label>
+
+        <!-- Max Data Age dropdown-->
+        <label>
+          <span class="mr-2">Max Data Age</span>
+          <select class="border border-gray-300 p-2 rounded" id="max-data-age">
+            <option value="-1">None</option>
+            <option value="10">10 Seconds</option>
+            <option value="60"><span>1 Minute</span></option>
+            <option value="600">10 Minutes</option>
+            <option selected value="3600"><span>1 Hour</span></option>
+          </select>
+        </label>
+
+        <!-- Height Mode dropdown-->
+        <label>
+          <span class="mr-2">Height Mode</span>
+          <select class="border border-gray-300 p-2 rounded" id="height-mode">
+            <option selected value="fixed">fixed</option>
+            <option value="scale">scale</option>
+          </select>
+        </label>
+
+        <!-- Width Mode dropdown-->
+        <label>
+          <span class="mr-2">Width Mode</span>
+          <select class="border border-gray-300 p-2 rounded" id="width-mode">
+            <option selected value="fixed">fixed</option>
+            <option value="scale">scale</option>
+          </select>
+        </label>
+
+        <!-- Charts Background dropdown-->
+        <label>
+          <span class="mr-2">Charts Background</span>
+          <select class="border border-gray-300 p-2 rounded" id="charts-background">
+            <option selected value="transparent">Transparent</option>
+            <option value="#C3E7FE">Blue</option>
+            <option value="#FFEC9E">Yellow</option>
+            <option value="#F1D4FD">Purple</option>
+            <option value="#023430">Dark Green</option>
+            <option value="#2D0B59">Dark Purple</option>
+            <option value="#4C2100">Dark Yellow</option>
+          </select>
+        </label>
+      </div>
+      
+      <!-- Embedded Dashboard-->
+      <div class="h-full" id="content">
+        <!-- <div class="h-full" id="dashboard"></div> -->
+        <div class="chart" id="chart1"></div>
+        <div class="chart" id="chart2"></div>
+        <div class="chart" id="chart3"></div>
+        <div class="chart" id="chart4"></div>
+      </div>
+    </main>
+    <script type="module" src="src/index.js"></script>
+  </body>
+</html>

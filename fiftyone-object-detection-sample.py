@@ -1,3 +1,8 @@
+import os
+#config defaults (or place these in ~/.fiftyone/config.json)
+os.environ['FIFTYONE_DATABASE_URI'] = 'mongodb+srv://main_user:musermuser@team10.3b42v.mongodb.net/fiftyone?retryWrites=true&w=majority'
+os.environ['FIFTYONE_DATABASE_VALIDATION'] = "false"
+
 import fiftyone as fo
 import fiftyone.zoo as foz
 #
@@ -16,10 +21,16 @@ model.to(device)
 model.eval()
 
 print("Model ready")
+# fo.config.database_uri =        "mongodb+srv://main_user:musermuser@team10.3b42v.mongodb.net/fiftyone?retryWrites=true&w=majority"
+# fo.config.database_validation = False
+fo.config.dataset_zoo_dir =     "./datasets"
+fo.config.default_dataset_dir = "./datasets"
 
-dataset = foz.load_zoo_dataset("coco-2017", split="validation")
+dataset_name = "coco-2017"
+
+dataset = foz.load_zoo_dataset("coco-2017", split="validation", max_samples=500 )
 dataset.persistent = True
-predictions_view = dataset.take(10, seed=51)
+predictions_view = dataset.take(1)
 
 # Get class list
 classes = dataset.default_classes
