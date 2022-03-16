@@ -109,9 +109,9 @@ need  writeup to run the fiftyone tool
 
 ### Data Enrichment  ###
 Two python scripts will be ran to transform the ships data set into a usable dataset of occurences, as well as geolocation formatting.
-
-````
-cd 
+```
+brew install geos
+python3 -m pip install Shapely pymongo json
 python3 ship_data_transformation.py 
 python3 add_geo.py
 ````
