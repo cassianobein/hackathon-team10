@@ -77,6 +77,7 @@ MongoDB Competitive differentiators
 - Cassiano Bien : Search 
 - Alek : Charts , Dashboard
 - Sharath :  Triggers, Video 
+- Andrew Lavoie : Python, Geoloc Generation
 
 # Demonstration Script #
 
