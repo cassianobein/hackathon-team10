@@ -11,6 +11,7 @@ python3 -m pip install Shapely pymongo json
 """
 import json
 import pymongo
+import random
 
 from shapely.geometry import Polygon, Point
 
