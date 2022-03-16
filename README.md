@@ -114,17 +114,22 @@ python3 metadata data_update.py
 ### Search Setup 
 
 ### Charts Setup 
-Activate Charts 
+#### Activate Charts 
+
 Setup the Data sources pipeline
 ![This is an datapipe setup 1 ](./Images/setdatapipe1.png)
 ![This is an datapipe setup 2 ](./Images/setdatapipe2.png)
-Import the Dashboard template 
+
+#### Import the Dashboard template 
+
+
 ![This is an ImportTemplate1 ](./Images/importtemplate1.png)
 ![This is an ImportTemplate2 ](./Images/importtemplate2.png)
 ![This is an ImportTemplate3 ](./Images/importtemplate3.png)
 
-#### Run Charts
+#### Configure Charts
 Edit following files to replace the baseUrl  
+
 ````
 const sdk = new ChartsEmbedSDK({
   baseUrl: "https://charts.mongodb.com/charts-team10-zpnrs" //REPLACE with your Atlas Charts base URL
@@ -150,6 +155,7 @@ const heatmapChart = sdk.createChart({
 })
 ````
 
+#### Run Charts
 
 ````
 cd charts 
