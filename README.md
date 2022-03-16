@@ -80,9 +80,9 @@ Sharath :  Video
 
 # Demonstration Script
 
-* _setup/installation steps_
+## Setup
 
-Fifty One  Setup Instations:
+### Fifty One Installation and Run:
 
 If you have a Apple computer and doesn't have Apple Command Line Tools installed, run this command:
 ```
@@ -103,13 +103,66 @@ Install Fiftyone by running these commmads:
 pip install --upgrade pip setuptools wheel
 pip install fiftyone
 ```
-* _step by step instructions on how to give the demonstration_
-**
-* _key points to emphasize at each point in the demonstration_
-* _any tear down steps required to reset the demonstration so it is ready for the next time_
+#### 
+need  writeup to run the fiftyone tool
+
+### Data Enrichment 
+
+````
+python3 metadata data_update.py 
+````
+### Search Setup 
+
+### Charts Setup 
+Activate Charts 
+Setup the Data sources pipeline
+![This is an datapipe setup 1 ](./Images/setdatapipe1.png)
+![This is an datapipe setup 2 ](./Images/setdatapipe2.png)
+Import the Dashboard template 
+![This is an ImportTemplate1 ](./Images/importtemplate1.png)
+![This is an ImportTemplate2 ](./Images/importtemplate2.png)
+![This is an ImportTemplate3 ](./Images/importtemplate3.png)
+
+#### Run Charts
+Edit following files to replace the baseUrl  
+````
+const sdk = new ChartsEmbedSDK({
+  baseUrl: "https://charts.mongodb.com/charts-team10-zpnrs" //REPLACE with your Atlas Charts base URL
+});
+````
+
+Edit following files to replace the chartId  for the following charts
+
+````
+const shiptypeChart = sdk.createChart({
+  chartId: "6230e742-1a35-4481-8e2c-45c3c28ca2ca", //REPLACE with your chartId
+});
+````
+chartId
+````
+const gaugeChart = sdk.createChart({
+  chartId: "6230fce0-5885-423c-8d42-918f35a59673", //REPLACE with your chartId
+});
+````
+````
+const heatmapChart = sdk.createChart({
+  chartId: "d1b34399-6c03-431d-8c4b-858536a61919", //REPLACE with your chartId
+})
+````
 
 
-==================================Template ends here ======================================
+````
+cd charts 
+npm install 
+npm start 
+````
+
+
+### Tear Down 
+
+
+
+=================================
 
 
 Object detection algortihms are being used for many real-world use cases. Real-time detection allows all kinds of challenges for collecting and acting on opportunities and threats.
@@ -121,5 +174,9 @@ Resources:
 https://voxel51.com/docs/fiftyone/index.html
 
 https://cloud.mongodb.com/v2/622fa89e695aa705f173de8f#clusters
+
+Data sources: 
+
+https://github.com/zzndream/ShipRSImageNet
 
 
