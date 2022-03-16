@@ -29,35 +29,23 @@ const gaugeChart = sdk.createChart({
 });
 
 const heatmapChart = sdk.createChart({
-  chartId: "6230fe75-5885-4e6e-8849-918f35a68de1",
+  chartId: "d1b34399-6c03-431d-8c4b-858536a61919",
   theme: "dark"
 })
 
 
 const clickHandlerGauge = (payload) => {
-  gaugeChart.setHighlight({});
+  gaugeChart.setHighlight({"mil_flag": true})
   shiptypeChart.setFilter({"mil_flag": true});
   locationChart.setFilter({"mil_flag": true});
-  heatmapChart.setFilter(
-    {
-      'ground_truth.detections.label':{
-        $in:['potted plant', 'tv']
-      }
-    }
-  );
+  heatmapChart.setFilter({"mil_flag": true});
 
 };
 
 const clickHandlerShips = (payload) => {
   shiptypeChart.setHighlight(payload.selectionFilter);
   locationChart.setFilter(payload.selectionFilter);
-  heatmapChart.setFilter(
-    {
-      'ground_truth.detections.label':{
-        $in:['potted plant']
-      }
-    }
-  );
+  heatmapChart.setFilter(payload.selectionFilter);
   
 };
 
@@ -122,7 +110,7 @@ async function renderDashboard() {
   await gaugeChart.render(document.getElementById("chart1"));
   await shiptypeChart.render(document.getElementById("chart2"));
   await heatmapChart.render(document.getElementById("chart3"));
-  await locationChart.render(document.getElementbyId("chart4"));
+  // await locationChart.render(document.getElementbyId("chart4"));
   addEventListeners();
 
   // const charts = await dashboard.getAllCharts();
