@@ -75,8 +75,9 @@ MongoDB Competitive differentiators
 - Charlie Little : Data Model , Dataset Generation
 - Dhananjay Ghevde : Demo Story Line, Aggregation Pipeline, Git Hub 
 - Cassiano Bien : Search 
-- Alec : Charts , Dashboard
+- Alek : Charts , Dashboard
 - Sharath :  Triggers, Video 
+- Andrew Lavoie : Python, Geoloc Generation
 
 # Demonstration Script #
 
@@ -107,13 +108,100 @@ pip install fiftyone
 need  writeup to run the fiftyone tool
 
 ### Data Enrichment  ###
-
-
-````
-cd 
-python3 metadata data_update.py 
+Two python scripts will be ran to transform the ships data set into a usable dataset of occurences, as well as geolocation formatting.
+```
+brew install geos
+python3 -m pip install Shapely pymongo json
+python3 ship_data_transformation.py 
+python3 add_geo.py
 ````
 ### Search Setup ###
+
+#### Setup Indexes ####
+
+- Setup default indexes 
+````
+{
+  "mappings": {
+    "dynamic": true
+  }
+}
+````
+
+- Setup Autocomplete Index for searching 
+
+````
+{
+  "mappings": {
+    "dynamic": true,
+    "fields": {
+      "ground_truth": {
+        "fields": {
+          "detections": {
+            "fields": {
+              "label": [
+                {
+                  "dynamic": true,
+                  "type": "document"
+                },
+                {
+                  "type": "autocomplete"
+                }
+              ]
+            },
+            "type": "document"
+          }
+        },
+        "type": "document"
+      }
+    }
+  }
+}
+
+````
+- Setup facets Index for searching 
+````
+{
+  "mappings": {
+    "dynamic": true,
+    "fields": {
+      "ground_truth": {
+        "fields": {
+          "detections": {
+            "fields": {
+              "Ship_area": {
+                "type": "numberFacet"
+              },
+              "Ship_location": {
+                "type": "stringFacet"
+              },
+              "Ship_size": [
+                {
+                  "dynamic": true,
+                  "type": "document"
+                },
+                {
+                  "type": "stringFacet"
+                }
+              ],
+              "label": {
+                "type": "stringFacet"
+              }
+            },
+            "type": "document"
+          }
+        },
+        "type": "document"
+      }
+    }
+  }
+}
+````
+
+
+#### Run Search UI ####
+
+
 
 ### Charts Setup ####
 #### Activate Charts ###
@@ -132,7 +220,7 @@ To locate the Template file navigate to : hackathon-team10/charts/template
 ![This is an ImportTemplate3 ](./Images/importtemplate3.png)
 
 #### Configure Charts ####
-Edit following files to replace the baseUrl  
+Make the following changes in /charts/src/index.js  
 
 ````
 const sdk = new ChartsEmbedSDK({
@@ -140,14 +228,14 @@ const sdk = new ChartsEmbedSDK({
 });
 ````
 
-Edit following files to replace the chartId  for the following charts
+Edit following lines to replace the chartId for each of the 3 charts
 
 ````
 const shiptypeChart = sdk.createChart({
   chartId: "6230e742-1a35-4481-8e2c-45c3c28ca2ca", //REPLACE with your chartId
 });
 ````
-chartId
+
 ````
 const gaugeChart = sdk.createChart({
   chartId: "6230fce0-5885-423c-8d42-918f35a59673", //REPLACE with your chartId
