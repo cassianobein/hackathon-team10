@@ -1,0 +1,8 @@
+[{$search: {
+ index: 'default',
+ text: {
+  query: 'sihp',
+  path: 'ground_truth.detections.label',
+  fuzzy: {}
+ }
+}}]

@@ -1,0 +1,10 @@
+[{$search: {
+    index: 'default',
+    text: {
+     query: 'plant',
+     path: {
+      wildcard: 'ground_truth.detections.*'
+     },
+     fuzzy: {}
+    }
+   }}]

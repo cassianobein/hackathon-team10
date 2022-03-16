@@ -1,0 +1,26 @@
+{
+  "mappings": {
+    "dynamic": true,
+    "fields": {
+      "ground_truth": {
+        "fields": {
+          "detections": {
+            "fields": {
+              "Ship_size": [
+                {
+                  "dynamic": true,
+                  "type": "document"
+                },
+                {
+                  "type": "stringFacet"
+                }
+              ]
+            },
+            "type": "document"
+          }
+        },
+        "type": "document"
+      }
+    }
+  }
+}

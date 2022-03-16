@@ -17,18 +17,29 @@ server.get("/search", async (request, response) => {
     try {
         let result = await collection.aggregate([
             {
-                "$search": {
-                    "index": "autocomplete",
-                    "autocomplete": {
-                        "query": `${request.query.query}`,
-                        "path": "name",
+                '$search': {
+                    'index': 'autocomplete', 
+                    'autocomplete': {
+                        'query': `${request.query.query}`, 
+                        'path': 'ground_truth.detections.label',
                         "fuzzy": {
                             "maxEdits": 2,
-                            "prefixLength": 3
+                            "prefixLength": 2
                         }
                     }
                 }
+            }, {
+                '$group': {
+                    '_id': '$ground_truth.detections.label', 
+                    'count': {
+                        '$sum': 1
+                    }
+                }
             }
+            , {
+                '$limit': 20
+            }
+
         ]).toArray();
         response.send(result);
     } catch (e) {
@@ -37,7 +48,8 @@ server.get("/search", async (request, response) => {
 });
 server.get("/get/:id", async (request, response) => {
     try {
-        let result = await collection.findOne({ "_id": ObjectID(request.params.id) });
+        //let result = await collection.findOne({ "_id": ObjectID(request.params.id) });
+        let result = await collection.find({ "ground_truth.detections.label": request.params.id }).toArray();
         response.send(result);
     } catch (e) {
         response.status(500).send({ message: e.message });
@@ -47,7 +59,7 @@ server.get("/get/:id", async (request, response) => {
 server.listen("3000", async () => {
     try {
         await client.connect();
-        collection = client.db("food").collection("recipes");
+        collection = client.db("fiftyone").collection("ships_updated");
     } catch (e) {
         console.error(e);
     }

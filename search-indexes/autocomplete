@@ -1,0 +1,26 @@
+{
+  "mappings": {
+    "dynamic": true,
+    "fields": {
+      "ground_truth": {
+        "fields": {
+          "detections": {
+            "fields": {
+              "label": [
+                {
+                  "dynamic": true,
+                  "type": "document"
+                },
+                {
+                  "type": "autocomplete"
+                }
+              ]
+            },
+            "type": "document"
+          }
+        },
+        "type": "document"
+      }
+    }
+  }
+}
