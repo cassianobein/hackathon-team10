@@ -71,9 +71,9 @@ print( paths_to_update );
 paths_to_update.forEach( doc => {
     var source_file = doc.ground_truth.detections.source_file;
     var name = source_file.split( "/" )[10];
-    var path = `https://triggers-realmapp-wxoor-yhfls.mongodbstitch.com/images/${name}`;
+    var path = `https://dev.d19dti32pa8gi5.amplifyapp.com/images/${name}`;
     print(path);
-    print( JSON.stringify( db.ships_updated.updateOne( { _id : doc._id }, { $set : { "img" : path } } ) ) );
+    print( JSON.stringify( db.ships_updated.updateOne( { _id : doc._id }, { $set : { "img2" : path } } ) ) );
 });
 
 
