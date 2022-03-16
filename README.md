@@ -104,10 +104,9 @@ Install Fiftyone by running these commmads:
 pip install --upgrade pip setuptools wheel
 pip install fiftyone
 ```
-#### 
-need  writeup to run the fiftyone tool
 
-### Data Enrichment  ###
+
+### Data upload Enrichment  ###
 Two python scripts will be ran to transform the ships data set into a usable dataset of occurences, as well as geolocation formatting.
 ```
 brew install geos
